@@ -1,5 +1,12 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['user'])) {
+    header("Location: ../");
+    exit;
+}
+
+$user = $_SESSION['user'];
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -194,12 +201,12 @@
     <form action="assets/function/login_manual.php" method="POST">
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required />
+        <input type="text" id="username" name="username" required placeholder="Email Or Username" />
       </div>
 
       <div class="form-group password-wrapper">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="password" name="password" required placeholder="Password" />
         <span id="togglePassword">👁️</span>
       </div>
 

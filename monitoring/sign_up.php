@@ -180,12 +180,12 @@
     <form action="assets/function/register.php" method="POST">
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required min="8"/>
+        <input type="text" id="username" name="username" required min="8" />
       </div>
       <div class="form-group">
           <label for="password">Password:</label>
           <div class="password-wrapper">
-              <input type="password" id="password" name="password" required min="8" />
+              <input type="password" id="password" name="password" required min="8"/>
               <span id="togglePassword">👁️</span>
             </div>
         </div>

@@ -1,7 +1,6 @@
 <?php
     include "../conn.php";
 
-    // Aktifkan error reporting (debugging)
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -12,11 +11,9 @@
         $email = $_POST['email'];
         $name = $_POST['name'];
         $created_at = date('Y-m-d H:i:s');
-
-        // Hash password sebelum disimpan
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO user (username, password, create_at, email, name) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO tblog_user (username, password, create_at, email, name) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {

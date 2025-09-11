@@ -24,7 +24,6 @@ $user = $_SESSION['user'];
       display: flex;
     }
 
-    /* Sidebar */
     .sidebar {
       width: 220px;
       min-height: 100vh;
@@ -35,7 +34,6 @@ $user = $_SESSION['user'];
       top: 0;
     }
 
-    /* Content */
     .content {
       margin-left: 220px;
       flex: 1;
@@ -45,7 +43,6 @@ $user = $_SESSION['user'];
       padding: 20px;
     }
 
-    /* Card */
     .card {
       background: #ffffff;
       border-radius: 16px;
@@ -92,10 +89,7 @@ $user = $_SESSION['user'];
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
   <?php include '../assets/layout/sidebar.php'; ?>
-
-  <!-- Content -->
   <div class="content">
     <div class="card">
       <h2>User Settings</h2>

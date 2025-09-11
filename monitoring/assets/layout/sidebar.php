@@ -1,5 +1,4 @@
 <?php
-// Mulai sesi
 if (!isset($_SESSION['user'])) {
     header("Location: ../");
     exit;
@@ -59,7 +58,6 @@ $user = $_SESSION['user'];
         transform: translateX(5px);
     }
 
-    /* Dropdown Monitoring */
     .dropdown {
         display: none;
         flex-direction: column;
@@ -69,7 +67,6 @@ $user = $_SESSION['user'];
         display: flex;
     }
 
-    /* Profile Section */
 .profile-section {
     margin-top: auto;
     display: flex;
@@ -79,8 +76,7 @@ $user = $_SESSION['user'];
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     cursor: pointer;
     position: relative;
-    background: #5B82C4; /* lebih cerah, masih biru sesuai sidebar */
-    border-radius: 8px 8px 0 0; /* optional biar ada sedikit rounded */
+    border-radius: 8px 8px 0 0; 
 } 
 
 .profile-section img {
@@ -104,7 +100,7 @@ $user = $_SESSION['user'];
 .profile-dropdown {
     display: none;
     flex-direction: column;
-    background: rgba(91, 130, 196, 0.95); /* lebih terang dari hitam */
+    background: rgba(91, 130, 196, 0.95); 
     position: absolute;
     bottom: 55px;
     left: 0;
@@ -138,14 +134,13 @@ $user = $_SESSION['user'];
         <a href="../dashboard"><i class="fas fa-home"></i>Dashboard</a>
         <a class="monitoring-toggle"><i class="fas fa-desktop"></i>Monitoring</a>
         <div class="dropdown">
-            <a href="../dashboard/ac_temperature.php"><i class="fas fa-thermometer-half"></i>AC Temperature</a>
+            <a href="../dashboard/ruang_server.php"><i class="fas fa-server"></i> Ruang Server</a>
             <a href="../dashboard/water_monitoring.php"><i class="fas fa-tint"></i>Water Monitoring</a>
         </div>
-        <a href="#"><i class="fas fa-sliders"></i> Control Panel</a>
+        <a href="../dashboard/control_relay.php"><i class="fas fa-toggle-off"></i>Control Relay</a>
         <a href="#"><i class="fas fa-chart-line"></i>Reports</a>
     </div>
 
-    <!-- Profile Section -->
 <div class="profile-section">
     <?php if (!empty($_SESSION['picture'])): ?>
         <img src="<?= htmlspecialchars($_SESSION['picture']) ?>" alt="Profile">
@@ -161,18 +156,15 @@ $user = $_SESSION['user'];
 </div>
 
 <script>
-    // Dropdown monitoring
     document.querySelector('.monitoring-toggle').addEventListener('click', function() {
         this.classList.toggle('active');
     });
 
-    // Profile dropdown
     document.querySelector('.profile-section').addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
     });
 
-    // Klik luar buat nutup dropdown
     document.addEventListener('click', function(e) {
         const profile = document.querySelector('.profile-section');
         if (!profile.contains(e.target)) {
@@ -180,4 +172,3 @@ $user = $_SESSION['user'];
         }
     });
 </script>
-<!-- username, nama, email, gambar, oauth_id, water + % -->
