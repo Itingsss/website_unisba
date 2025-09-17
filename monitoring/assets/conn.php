@@ -13,5 +13,5 @@ if ($conn->connect_errno) {
 
 define('GOOGLE_CLIENT_ID', '183166548642-mi1tblern5c4kkgjisbtmcdm7vqshnk0.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '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');
-define('GOOGLE_REDIRECT_URL', 'https://localhost/monitoring/assets/function/call-back.php');
+define('GOOGLE_REDIRECT_URL', 'https://gl00h17h-80.asse.devtunnels.ms/monitoring/assets/function/call-back.php');
 ?> 

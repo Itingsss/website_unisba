@@ -1,5 +1,7 @@
 {
     "require": {
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "bluerhinos/phpmqtt": "^1.0",
+        "php-mqtt/client": "^2.2"
     }
 }

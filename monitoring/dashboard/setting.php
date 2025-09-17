@@ -24,15 +24,54 @@ $user = $_SESSION['user'];
       display: flex;
     }
 
-    .sidebar {
-      width: 220px;
-      min-height: 100vh;
-      background: #476EAE;
+    /* Sidebar */
+ .sidebar {
+    width: 220px;
+    background: #476EAE;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0; /* default di desktop */
+    height: 100%;
+    z-index: 2000;
+    transition: left 0.3s ease-in-out;
+  }
+  /* Mobile: sembunyikan sidebar */
+  @media (max-width: 900px) {
+    .sidebar { left: -100%; }
+    .sidebar.show { left: 0; }
+  }
+
+    .sidebar h2 { text-align: center; margin-bottom: 20px; }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       color: #fff;
-      position: fixed;
-      left: 0;
-      top: 0;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: background 0.3s;
+      z-index: 2500;
     }
+    .sidebar a:hover { background: rgba(255, 255, 255, 0.2); }
+
+    /* Hamburger */
+    .hamburger {
+    display:none;
+    position:fixed;
+    top:15px;
+    left:15px;
+    font-size:28px;
+    color:#476EAE;
+    cursor:pointer;
+    z-index:2500;
+  }
+  @media (max-width: 900px) {
+    .hamburger { display: block; }
+  }
 
     .content {
       margin-left: 220px;
@@ -86,9 +125,18 @@ $user = $_SESSION['user'];
       font-weight: bold;
       color: #476EAE;
     }
+    @media (max-width: 900px) {
+  .content {
+    margin-left: 0;           /* jangan geser ke kanan */
+    justify-content: center;  /* pastikan di tengah horizontal */
+    align-items: center;      /* pastikan di tengah vertical */
+    min-height: 100vh;        /* biar card tetap center penuh layar */
+  }
+}
   </style>
 </head>
 <body>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
   <?php include '../assets/layout/sidebar.php'; ?>
   <div class="content">
     <div class="card">
@@ -104,5 +152,13 @@ $user = $_SESSION['user'];
   <?php
     include "../assets/layout/footer.php";
   ?>
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const sidebar = document.querySelector(".sidebar");
+
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>

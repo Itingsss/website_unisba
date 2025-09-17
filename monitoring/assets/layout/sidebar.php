@@ -3,11 +3,11 @@ if (!isset($_SESSION['user'])) {
     header("Location: ../");
     exit;
 }
-
+// setting admin : monitoring user, nambah alat (monitoring ac& air,)
 $user = $_SESSION['user'];
 
 ?>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
     .sidebar {
         width: 220px;
@@ -129,15 +129,27 @@ $user = $_SESSION['user'];
 </style>
 
 <div class="sidebar">
-    <div>
+      <div>
         <h2>Home</h2>
         <a href="../dashboard"><i class="fas fa-home"></i>Dashboard</a>
+
+        <!-- Monitoring -->
         <a class="monitoring-toggle"><i class="fas fa-desktop"></i>Monitoring</a>
         <div class="dropdown">
             <a href="../dashboard/ruang_server.php"><i class="fas fa-server"></i> Ruang Server</a>
-            <a href="../dashboard/water_monitoring.php"><i class="fas fa-tint"></i>Water Monitoring</a>
+            <a href="../dashboard/water_monitoring.php"><i class="fas fa-tint"></i> Water Monitoring</a>
         </div>
+
         <a href="../dashboard/control_relay.php"><i class="fas fa-toggle-off"></i>Control Relay</a>
+        <a href="../dashboard/ac_monitoring.php"><i class="fa-solid fa-snowflake"></i> AC Monitoring 3 Phasa</a>
+
+        <!-- Settings -->
+        <a class="settings-toggle"><i class="fa-solid fa-gear"></i> Settings</a>
+        <div class="dropdown">
+            <a href="../dashboard/system_set.php"><i class="fas fa-cogs"></i> System Settings</a>
+            <a href="../dashboard/settingsd.php"><i class="fas fa-bell"></i> Notification Setting</a>
+        </div>
+
         <a href="#"><i class="fas fa-chart-line"></i>Reports</a>
     </div>
 
@@ -149,17 +161,24 @@ $user = $_SESSION['user'];
     <?php endif; ?>
     <span><?= htmlspecialchars($user['name'] ?? 'Guest') ?></span>
     <div class="profile-dropdown">
-        <a href="../dashboard/setting.php">⚙️ Settings</a>
+        <a href="../dashboard/setting.php"><i class="fa-solid fa-gear"></i> Settings</a>
         <a href="../assets/function/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </div>
 </div>
 
 <script>
+      // Monitoring toggle
     document.querySelector('.monitoring-toggle').addEventListener('click', function() {
         this.classList.toggle('active');
     });
 
+    // Settings toggle
+    document.querySelector('.settings-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+
+    // Profile dropdown
     document.querySelector('.profile-section').addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');

@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['login'])) {
     if ($result->num_rows === 1){
         $user = $result->fetch_assoc();
 
-        if ($user['is_active'] === "aktif") {
-            echo "<script>
-            alert ('⚠️ Akun ini sedang dipakai di perangkat lain.');
-            window.location.href = '../../';
-            </script>";
-            exit;
-        }
+        // if ($user['is_active'] === "aktif") {
+        //     echo "<script>
+        //     alert ('⚠️ Akun ini sedang dipakai di perangkat lain.');
+        //     window.location.href = '../../';
+        //     </script>";
+        //     exit;
+        // }
 
         if (password_verify($password, $user['password'])){
             $_SESSION['user'] = $user;

@@ -53,13 +53,13 @@ if (!isset($_GET['code'])) {
     } else {
         $user = $results->fetch_assoc();
 
-        if ($user['is_active'] === "aktif") {
-            echo "<script>
-            alert('⚠️ Akun ini sedang dipakai di perangkat lain.');
-            window.location.href='../../';
-            </script>";
-            exit;
-        }
+        // if ($user['is_active'] === "aktif") {
+        //     echo "<script>
+        //     alert('⚠️ Akun ini sedang dipakai di perangkat lain.');
+        //     window.location.href='../../';
+        //     </script>";
+        //     exit;
+        // }
 
         $stmt = $conn->prepare("UPDATE tblog_user 
                                 SET name = ?, email = ?, last_login = ?, is_active = ? 

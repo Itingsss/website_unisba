@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['user'])) {
-    header("Location: ../");
-    exit;
-}
-
-$user = $_SESSION['user'];
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>

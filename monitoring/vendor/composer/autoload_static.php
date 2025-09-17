@@ -26,10 +26,12 @@ class ComposerStaticInit3e6e79e410cd98a8d86f36f772fe3690
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'Psr\\Cache\\' => 10,
+            'PhpMqtt\\Client\\' => 15,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
         'M' => 
         array (
+            'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
         ),
         'G' => 
@@ -44,6 +46,10 @@ class ComposerStaticInit3e6e79e410cd98a8d86f36f772fe3690
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
+        ),
+        'B' => 
+        array (
+            'Bluerhinos\\' => 11,
         ),
     );
 
@@ -69,9 +75,17 @@ class ComposerStaticInit3e6e79e410cd98a8d86f36f772fe3690
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'PhpMqtt\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mqtt/client/src',
+        ),
         'ParagonIE\\ConstantTime\\' => 
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
+        ),
+        'MyCLabs\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
         ),
         'Monolog\\' => 
         array (
@@ -105,6 +119,10 @@ class ComposerStaticInit3e6e79e410cd98a8d86f36f772fe3690
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
+        'Bluerhinos\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bluerhinos/phpmqtt',
+        ),
     );
 
     public static $classMap = array (
@@ -129,6 +147,7 @@ class ComposerStaticInit3e6e79e410cd98a8d86f36f772fe3690
         'Google_Task_Retryable' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         'Google_Task_Runner' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
         'Google_Utils_UriTemplate' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
+        'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
